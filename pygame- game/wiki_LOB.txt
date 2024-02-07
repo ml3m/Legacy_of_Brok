@@ -1,0 +1,75 @@
+~~~~ wiki with theory and help for certain things in Legacy of Brok game 
+_________________________________________________________________________________________________________________________________________________________________
+what is dt?
+
+In your game code, the variable dt typically stands for "delta time." 
+Delta time is a measure of the time that has passed between two consecutive frames in a game. 
+It is often used in game development to make game logic and animations frame rate-independent.
+
+Here's how dt is commonly used:
+
+Frame Rate Independence: By multiplying the speed or velocity of game objects by dt, 
+you ensure that the movement of objects remains consistent, regardless of the frame rate. 
+This prevents objects from moving too quickly on faster systems or too slowly on slower systems.
+
+Smooth Animations: When updating animations, dt can be used to control the rate at which frames change, 
+ensuring smooth and consistent animations.
+
+Physics Simulation: In physics simulations within games, 
+dt is used to calculate the change in positions and velocities of objects over time, 
+taking into account the frame rate.
+
+
+Here's a simplified example of how dt might be used to update the position of a game object based on its velocity:
+
+#Inside the game loop
+while running:
+    # Calculate delta time (time since last frame)
+    dt = clock.tick(60) / 1000  # Assuming a target frame rate of 60 FPS
+
+    # Update the position of a game object based on its velocity
+    object.x += object.velocity_x * dt
+    object.y += object.velocity_y * dt
+
+    # Rest of the game logic and rendering
+
+_________________________________________________________________________________________________________________________________________________________________
+Collision visualizer for player/ enemies.
+
+        # pygame.draw.circle(screen, (255, 0, 0), player.rect.center, player.radius + 5) # colision viewer circl
+
+_________________________________________________________________________________________________________________________________________________________________
+Encapsulated structure Game class
+
+Encapsulating your game logic in a Game class offers several benefits,
+ and it can be a foundation for adding more features and improvements to your game in the future. 
+ Here are some ideas and features that encapsulation can help you with:
+Modularity and Readability: Encapsulation helps organize your code into logical units, making it easier to read, 
+understand, and maintain. As your game grows in complexity, this becomes crucial.
+Scalability: With a well-structured Game class, you can easily add new features, characters,
+ levels, and game mechanics without disrupting the existing codebase. This makes it simpler to extend your game over time.
+Code Reusability: You can reuse your Game class in different projects or create variations of your game with minimal code changes.
+Testing: Encapsulated game logic is more testable.
+ You can write unit tests for various components of your game, ensuring that new features or changes don't introduce bugs in existing functionality.
+Game State Management: The Game class can handle various game states, such as menu screens,
+ gameplay, pause screens, and game over screens. This allows you to implement smooth transitions between states.
+Customization: You can add settings and options for players to customize their gaming experience,
+such as difficulty levels, keybindings, graphics settings, and audio preferences.
+Multiplayer and Networking: If you decide to add multiplayer functionality in the future, 
+encapsulation allows you to manage player interactions, synchronization, and communication more effectively.
+Achievements and Progression: You can implement achievements, rewards,
+ and a progression system to keep players engaged and motivated to keep playing.
+Game Analytics: Encapsulation facilitates the integration of game analytics tools to collect data on player behavior,
+ which can help you make data-driven decisions for improvements.
+Dynamic Content: You can create dynamic, procedurally generated content like levels, enemies,
+ and challenges, providing endless gameplay possibilities.
+Localization: If you plan to release your game in multiple languages, you can add localization support,
+ allowing players from different regions to enjoy your game.
+Cross-Platform Support: With proper encapsulation, you can more easily adapt your game for different platforms,
+ such as mobile devices or consoles.
+Graphics and Audio Enhancements: Encapsulation enables you to enhance graphics, add special effects,
+ and improve audio features, making your game more visually and audibly appealing.
+Community and User-Generated Content: You can create tools that allow 
+players to create and share their own levels or content within your game, fostering a community around your game.
+Bug Fixes and Updates: Encapsulation makes it simpler to identify and fix bugs, 
+as changes in one part of the code are less likely to affect other areas. It also facilitates the release of updates and patches.
